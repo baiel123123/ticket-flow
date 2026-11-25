@@ -18,5 +18,5 @@ async def health(session: SessionInjection):
         e = await session.execute(text("SELECT 1"))
         return {"status": "okay baby"}
     except SQLAlchemyError as e:
-        raise HTTPException(status_code=503, detail=e)  
+        raise HTTPException(status_code=503, detail="huesos")  
 
