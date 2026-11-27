@@ -19,4 +19,6 @@ async def health(session: SessionInjection):
         return {"status": "okay baby"}
     except SQLAlchemyError:
         raise HTTPException(status_code=503, detail="huesos")
-    
+
+def calc():
+    return 123
