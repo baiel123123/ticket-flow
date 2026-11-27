@@ -15,8 +15,8 @@ SessionInjection = Annotated[AsyncSession, Depends(get_async_session)]
 @app.get("/health")
 async def health(session: SessionInjection):
     try:
-        e = await session.execute(text("SELECT 1"))
+        await session.execute(text("SELECT 1"))
         return {"status": "okay baby"}
-    except SQLAlchemyError as e:
+    except SQLAlchemyError:
         raise HTTPException(status_code=503, detail="huesos")  
 
