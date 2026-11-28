@@ -1,14 +1,15 @@
 """init migration
 
 Revision ID: 79a453c747d2
-Revises: 
+Revises:
 Create Date: 2026-11-27 17:40:53.641644
 
 """
+
 from collections.abc import Sequence
 
 # revision identifiers, used by Alembic.
-revision: str = '79a453c747d2'
+revision: str = "79a453c747d2"
 down_revision: str | Sequence[str] | None = None
 branch_labels: str | Sequence[str] | None = None
 depends_on: str | Sequence[str] | None = None

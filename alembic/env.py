@@ -11,7 +11,10 @@ from app.core.database import Base
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
-config.set_main_option("sqlalchemy.url", settings.db_url.render_as_string(hide_password=False).replace("%", "%%"))
+config.set_main_option(
+    "sqlalchemy.url",
+    settings.db_url.render_as_string(hide_password=False).replace("%", "%%"),
+)
 print(config.get_main_option("sqlalchemy_url"))
 print(settings.db_url)
 
@@ -30,6 +33,7 @@ target_metadata = Base.metadata
 # can be acquired:
 # my_important_option = config.get_main_option("my_important_option")
 # ... etc.
+
 
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode.
