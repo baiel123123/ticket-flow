@@ -22,8 +22,8 @@ jobs:
 
       - name: Lint and check format
         run: |
-          ruff check .
-          ruff format --check .
+          uv run ruff check .
+          uv run ruff format --check .
 
       - name: Run tests
         run: pytest
